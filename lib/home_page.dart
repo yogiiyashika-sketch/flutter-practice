@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'write_thought_page.dart';
 import 'thoughts_page.dart';
+import 'theme_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -53,6 +54,7 @@ class HomePage extends StatelessWidget {
 
             const SizedBox(height: 30),
 
+            // Today's Thought
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
@@ -136,6 +138,34 @@ class HomePage extends StatelessWidget {
 
                 label: const Text(
                   'My Thoughts',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 12),
+
+            // Customize Theme Button
+            SizedBox(
+              width: double.infinity,
+              height: 55,
+
+              child: OutlinedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ThemePage(),
+                    ),
+                  );
+                },
+
+                icon: const Icon(Icons.palette),
+
+                label: const Text(
+                  'Customize Theme',
                   style: TextStyle(
                     fontSize: 18,
                   ),
